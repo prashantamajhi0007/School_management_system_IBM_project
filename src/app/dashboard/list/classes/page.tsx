@@ -42,7 +42,7 @@ const columns=[
 ]
 
 const ClassListPage=()=>{
-    const renderRow = (item: Class) => (
+    const renderRow = (item: Subject) => (
       <tr
       key={item.id}
       className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight"
@@ -51,20 +51,21 @@ const ClassListPage=()=>{
       <td className="hidden md:table-cell">{item.capacity}</td>
       <td className="hidden md:table-cell">{item.name[0]}</td>
       <td className="hidden md:table-cell">
-        {item.supervisor.name + " " + item.supervisor.surname}
+       
       </td>
       <td>
-        <div className="flex items-center gap-2">
-        <Link href={`/list/teachers/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
-               < Image src="/view.png" alt="" width={16} height={16} /> 
-            </button>
-            {role=== "admin" &&( <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
-               < Image src="/delete.png" alt="" width={16} height={16} /> 
-            </button>
-        )}
-            </Link>
-        </div>
+      <div className="flex items-center gap-2">
+  <Link href={`/list/teachers/${item.id}`}>
+    <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
+      <Image src="/view.png" alt="view" width={16} height={16} />
+    </button>
+  </Link>
+  {role === "admin" && (
+    <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
+      <Image src="/delete.png" alt="delete" width={16} height={16} />
+    </button>
+  )}
+</div>
       </td>
     </tr>
 

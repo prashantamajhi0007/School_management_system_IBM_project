@@ -40,22 +40,24 @@ const SubjectListPage=()=>{
         
           <div className="flex flex-col">
             <h3 className="font-semibold">{item.name}</h3>
-            <p className="text-xs text-gray-500">{item.teachers.join(",")}</p>
           </div>
+          
         </td>
-    
+    <td> <p className="text-xs text-gray-500">{item.teachers.join(",")}</p></td>
         <td>
-          <div className="flex items-center gap-2">
-            <Link href={`/list/teachers/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
-               < Image src="/view.png" alt="" width={16} height={16} /> 
-            </button>
-            {role=== "admin" &&( <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
-               < Image src="/delete.png" alt="" width={16} height={16} /> 
-            </button>
-        )}
-            </Link>
-          </div>
+        <div className="flex items-center gap-2">
+  <Link href={`/list/teachers/${item.id}`}>
+    <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
+      <Image src="/view.png" alt="view" width={16} height={16} />
+    </button>
+  </Link>
+  {role === "admin" && (
+    <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
+      <Image src="/delete.png" alt="delete" width={16} height={16} />
+    </button>
+  )}
+</div>
+
         </td>
       </tr>
 

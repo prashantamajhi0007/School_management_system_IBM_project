@@ -45,27 +45,27 @@ const columns=[
 
 const ExamListPage=()=>{
     const renderRow = (item: Exam) => (
-        <tr
-        key={item.id}
-        className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight"
-      >
-        <td className="flex items-center gap-4 p-4">{item.subject} </td>
-        <td >{item.class} </td>
-        <td className="flex items-center gap-4 p-4">{item.teacher} </td>
-        <td className="flex items-center gap-4 p-4">{item.date} </td>
-    
+      <tr
+      key={item.id}
+      className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight"
+    >
+      <td className="p-4">{item.subject}</td>
+      <td className="p-4">{item.class}</td>
+      <td className="p-4">{item.teacher}</td>
+      <td className="p-4">{item.date}</td>
         <td>
-          <div className="flex items-center gap-2">
-            <Link href={`/list/teachers/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
-               < Image src="/edit.png" alt="" width={16} height={16} /> 
-            </button>
-            {role=== "admin" &&( <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
-               < Image src="/delete.png" alt="" width={16} height={16} /> 
-            </button>
-        )}
-            </Link>
-          </div>
+        <div className="flex items-center gap-2">
+  <Link href={`/list/teachers/${item.id}`}>
+    <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
+      <Image src="/view.png" alt="view" width={16} height={16} />
+    </button>
+  </Link>
+  {role === "admin" && (
+    <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
+      <Image src="/delete.png" alt="delete" width={16} height={16} />
+    </button>
+  )}
+</div>
         </td>
       </tr>
 

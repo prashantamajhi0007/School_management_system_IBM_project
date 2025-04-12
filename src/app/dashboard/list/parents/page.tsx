@@ -22,7 +22,7 @@ const columns=[
         },
         {
           header: "Student Names",
-          accessor: "Students",
+          accessor: "students",
           className: "hidden md:table-cell",
         },
         {
@@ -56,21 +56,23 @@ const ParentListPage=()=>{
             <p className="text-xs text-gray-500">{item?.email}</p>
           </div>
         </td>
-        <td className="hidden md:table-cell">{item.students.join(",")}</td>
+        <td className="hidden md:table-cell">{item.sutudents.join(",")}</td>
         <td className="hidden md:table-cell">{item.phone}</td>
         <td className="hidden md:table-cell">{item.address}</td>
         <td>
           <div className="flex items-center gap-2">
-            <Link href={`/list/teachers/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
-               < Image src="/edit.png" alt="" width={16} height={16} /> 
-            </button>
-            {role=== "admin" &&( <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
-               < Image src="/delete.png" alt="" width={16} height={16} /> 
-            </button>
-        )}
-            </Link>
-          </div>
+  <Link href={`/list/teachers/${item.id}`}>
+    <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
+      <Image src="/view.png" alt="view" width={16} height={16} />
+    </button>
+  </Link>
+  {role === "admin" && (
+    <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
+      <Image src="/delete.png" alt="delete" width={16} height={16} />
+    </button>
+  )}
+</div>
+
         </td>
       </tr>
 
